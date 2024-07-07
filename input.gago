@@ -1,23 +1,23 @@
+-- oi
 x = (2 + 2) * 3;
 y = 20;
 
 if (x < y) {
-    print "${x} é menor que ${y}";
+    print "#{x} é menor que #{y}";
 } else {
-    print "${x} é maior que ${y}";
+    print "#{x} é maior que #{y}";
 }
 
 while (x < 15) {
     x = x + 1;
-    print "x = ${x}";
-}
-
-for (i = 0; i < 10; i = i + 1) {
-    print i + 2;
+    print "x = #{x}";
 }
 
 function media(a, b) {
-    print (a + b) / 2;
+    x = (a + b) / 2;
+    print x;
+    return x;
 }
 
-media(0, 5);
+teste = media(0, 5);
+print teste;

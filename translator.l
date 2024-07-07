@@ -1,7 +1,11 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "translator.tab.h"
+
+// Declarar externamente o yylval
+extern YYSTYPE yylval;
 %}
 
 /* Regras de expressão regular para tokens */
@@ -15,6 +19,7 @@
 "print"             { return PRINT; }
 "function"          { return FUNCTION; }
 "return"            { return RETURN; }
+"--".*              { /* Ignorar comentários */ }
 "+"                 { return PLUS; }
 "-"                 { return MINUS; }
 "*"                 { return TIMES; }
@@ -34,7 +39,7 @@
 "=="                { return EQ; }
 "!="                { return NE; }
 \"[^\"]*\"          { yylval.str = strndup(yytext + 1, yyleng - 2); return STRING; }  // Remover as aspas
-[ \t\n]             { /* Ignorar espaços em branco */ }
+[ \t\n]+            { /* Ignorar espaços em branco */ }
 .                   { printf("Caractere desconhecido: %s\n", yytext); exit(1); }
 
 %%

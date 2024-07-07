@@ -22,7 +22,7 @@ char *concat(const char *s1, const char *s2);
 %nonassoc IFX
 %nonassoc ELSE
 
-%type <str> factor statement statements expression assignment simple_expression term program function_declaration function_call parameter_list argument_list
+%type <str> factor statement statements expression assignment simple_expression term program function_declaration function_call parameter_list argument_list return_statement
 
 %%
 
@@ -49,19 +49,19 @@ statement:
     }
     | PRINT STRING ';'
     {
-        $$ = concat(concat("puts \"", $2), "\"\n");
+        $$ = concat(concat("puts \"", concat($2, "\"")), "\n");
     }
     | IF LPAREN expression RPAREN statement %prec IFX
     {
-        $$ = concat(concat(concat("if ", $3), "\n"), $5);
+        $$ = concat(concat("if ", $3), concat($5, "end"));
     }
     | IF LPAREN expression RPAREN statement ELSE statement
     {
-        $$ = concat(concat(concat(concat("if ", $3), $5), "else"), $7);
+        $$ = concat(concat(concat(concat("if ", $3), $5), "else"), concat($7, "end\n"));
     }
     | WHILE LPAREN expression RPAREN statement
     {
-        $$ = concat(concat(concat("while ", $3), " do"), $5);
+        $$ = concat(concat("while ", $3), concat($5, "end\n"));
     }
     | FOR LPAREN expression ';' expression ';' expression RPAREN statement
     {
@@ -74,7 +74,7 @@ statement:
     }
     | LBRACE statements RBRACE
     {
-        $$ = concat(concat("\n", $2), "end\n");
+        $$ = concat("\n", $2);
     }
     | function_declaration
     {
@@ -83,9 +83,20 @@ statement:
     ;
 
 function_declaration:
-    FUNCTION ID LPAREN parameter_list RPAREN LBRACE statements RBRACE
+    FUNCTION ID LPAREN parameter_list RPAREN LBRACE statements return_statement RBRACE
     {
-        $$ = concat(concat(concat(concat(concat(concat("def ", $2), " "), $4), "\n"), $7), "end\n");
+        $$ = concat(concat(concat(concat(concat(concat("def ", $2), " "), $4), "\n"), concat($7, $8)), "end\n");
+    }
+    ;
+
+return_statement:
+    RETURN expression ';'
+    {
+        $$ = concat(concat("return ", $2), "\n");
+    }
+    | /* vazio */
+    {
+        $$ = "";
     }
     ;
 

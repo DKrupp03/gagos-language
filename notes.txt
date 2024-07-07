@@ -5,11 +5,9 @@ ok - Estruturas de controle de repetição
 ok - Operações matemáticas
 ok - Escrita de resultados (i.e. print e echo)
 
---> Parênteses duplo no print
---> Concatenação
---> Return
---> Atribuição de function
---> Comentário
+--> Ajustar ou remover o for
+--> Floats?
+--> Readme
 
 ADICIONAR
 - Expressões aritméticas
@@ -23,26 +21,3 @@ bison -d translator.y
 gcc lex.yy.c translator.tab.c -o translator -lfl
 ./translator < input.gago
 cat output.rb
-
-_________________________________________________________________________________________
-
-
-# Isso é um comentário
-fufuncao nome_funcao (parametro1, parametro2) {
-  sese (parametro1 > parametro2) {
-    lalaco_ate (parametro1 < parametro2) {
-      escrecreve ("numero = {parametro1}") # Concatena
-      parametro1 = parametro1 - 1
-    }
-  }
-  sesenao {
-    lalaco_ate (parametro1 > parametro2) {
-      escrecreve ("numero = {parametro1}")
-      parametro1 = parametro1 + 1
-    }
-  }
-
-  reretorna parametro1
-}
-
-nome_funcao (5, 1)
