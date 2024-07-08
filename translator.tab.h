@@ -72,7 +72,8 @@ extern int yydebug;
     RBRACE = 278,
     FUNCTION = 279,
     RETURN = 280,
-    IFX = 281
+    FLOAT = 281,
+    IFX = 282
   };
 #endif
 
@@ -84,7 +85,7 @@ union YYSTYPE
 
     char *str;
 
-#line 88 "translator.tab.h"
+#line 89 "translator.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

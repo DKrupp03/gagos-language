@@ -20,9 +20,8 @@ FOFOR (i, 0, 5) {
 
 FUFUNCTION media(a, b) {
     x = (a + b) / 2;
-    PRIPRINT x;
     RETUTURN x;
 }
 
-teste = media(0, 5);
+teste = media(0, 5.5);
 PRIPRINT teste;

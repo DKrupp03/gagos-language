@@ -11,6 +11,7 @@ extern YYSTYPE yylval;
 /* Regras de expressão regular para tokens */
 %%
 
+[0-9]+\.[0-9]+      { yylval.str = strdup(yytext); return FLOAT; }
 [0-9]+              { yylval.str = strdup(yytext); return NUMBER; }
 "IFIF"              { return IF; }
 "ELSESE"            { return ELSE; }

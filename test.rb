@@ -17,5 +17,5 @@ x = (a + b) / 2
 puts x
 return x
 end
-teste = media 0, 5
+teste = media 0, 5.5
 puts teste

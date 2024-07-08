@@ -15,7 +15,7 @@ char *concat(const char *s1, const char *s2);
 }
 
 /* Declaração de tokens */
-%token <str> ID STRING LPAREN RPAREN NUMBER PLUS MINUS TIMES DIVIDE ASSIGN IF ELSE WHILE FOR PRINT '>' '<' GE LE EQ NE LBRACE RBRACE FUNCTION RETURN
+%token <str> ID STRING LPAREN RPAREN NUMBER PLUS MINUS TIMES DIVIDE ASSIGN IF ELSE WHILE FOR PRINT '>' '<' GE LE EQ NE LBRACE RBRACE FUNCTION RETURN FLOAT
 %left PLUS MINUS
 %left TIMES DIVIDE
 %right ASSIGN
@@ -199,6 +199,7 @@ term:
 
 factor:
     NUMBER { $$ = $1; }
+    | FLOAT { $$ = $1; }
     | ID { $$ = $1; }
     | LPAREN expression RPAREN
     {
