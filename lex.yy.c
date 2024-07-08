@@ -1,5 +1,6 @@
+#line 2 "lex.yy.c"
 
-#line 3 "lex.yy.c"
+#line 4 "lex.yy.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -500,9 +501,9 @@ char *yytext;
 
 // Declarar externamente o yylval
 extern YYSTYPE yylval;
-#line 504 "lex.yy.c"
+#line 505 "lex.yy.c"
 /* Regras de expressão regular para tokens */
-#line 506 "lex.yy.c"
+#line 507 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -722,7 +723,7 @@ YY_DECL
 #line 12 "translator.l"
 
 
-#line 726 "lex.yy.c"
+#line 727 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -941,7 +942,7 @@ YY_RULE_SETUP
 #line 46 "translator.l"
 ECHO;
 	YY_BREAK
-#line 945 "lex.yy.c"
+#line 946 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
