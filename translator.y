@@ -63,12 +63,11 @@ statement:
     {
         $$ = concat(concat("while ", $3), concat($5, "end\n"));
     }
-    | FOR LPAREN expression ';' expression ';' expression RPAREN statement
+    | FOR LPAREN expression ',' expression ',' expression RPAREN statement
     {
-        char *temp1 = concat(concat(concat(concat("for (", $3), "; "), $5), "; ");
+        char *temp1 = concat(concat(concat(concat("for ", $3), " in "), $5), "..");
         char *temp2 = concat(temp1, $7);
-        $$ = concat(temp2, ")\n");
-        $$ = concat($$, $9);
+        $$ = concat(concat(concat(temp2, " do"), $9), "end\n");
         free(temp1);
         free(temp2);
     }

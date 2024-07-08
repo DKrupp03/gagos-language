@@ -540,10 +540,10 @@ static const yytype_int8 yytranslate[] =
 static const yytype_uint8 yyrline[] =
 {
        0,    30,    30,    37,    38,    42,    46,    50,    54,    58,
-      62,    66,    75,    79,    86,    93,    98,   104,   108,   113,
-     119,   126,   130,   135,   141,   142,   146,   150,   154,   155,
-     159,   163,   167,   171,   175,   179,   183,   190,   191,   195,
-     202,   203,   204
+      62,    66,    74,    78,    85,    92,    97,   103,   107,   112,
+     118,   125,   129,   134,   140,   141,   145,   149,   153,   154,
+     158,   162,   166,   170,   174,   178,   182,   189,   190,   194,
+     201,   202,   203
 };
 #endif
 
@@ -592,11 +592,11 @@ static const yytype_int8 yypact[] =
        2,    75,   -35,   -35,   -35,    -4,   -35,    85,    44,   -35,
       28,    28,    26,    28,    28,    28,    27,    29,    36,    41,
      -35,   -35,   -35,    37,    37,    37,    37,    37,    37,    37,
-      37,    37,    37,    -3,   -35,   -35,   -35,    51,    53,    34,
-     -35,   -35,   -35,    47,   -35,    44,    44,    44,    44,    44,
+      37,    37,    37,    -3,   -35,   -35,   -35,    51,    53,    20,
+     -35,   -35,   -35,    60,   -35,    44,    44,    44,    44,    44,
       44,    44,    44,   -35,   -35,   -35,    28,    75,    75,    28,
-     -35,     0,   -35,    52,   -35,    42,    46,    62,    75,    28,
-      75,   -35,   -35,    66,    21,    75,    28,    49,   -35,    54,
+     -35,     0,   -35,    52,   -35,    35,    46,    68,    75,    28,
+      75,   -35,   -35,    66,    21,    75,    28,    49,   -35,    47,
      -35,   -35
 };
 
@@ -641,10 +641,10 @@ static const yytype_int8 yytable[] =
       29,    47,    48,    49,     1,    32,     2,    66,     3,    31,
       77,     1,    46,     2,     4,     3,     5,     6,     7,     1,
       54,     2,     2,     3,     3,     8,    53,     9,    86,     4,
-      70,     5,     6,     7,    41,    42,    50,    67,    51,    68,
-       8,    52,     9,    69,    72,    81,    78,    75,    73,    74,
-      80,    79,    85,    84,    90,     0,     0,    83,     1,    82,
-       2,     0,     3,    91,    89,    31,    88,     0,     4,     0,
+      69,     5,     6,     7,    41,    42,    50,    67,    51,    68,
+       8,    52,     9,    70,    72,    79,    78,    75,    73,    74,
+      80,    81,    85,    84,    90,     0,    91,    83,     1,    82,
+       2,     0,     3,     0,    89,    31,    88,     0,     4,     0,
        5,     6,     7,    33,    34,     0,     0,     0,     0,     8,
        0,     9,     0,    35,    36,    37,    38,    39,    40,    55,
       56,    57,    58,    59,    60,    61,    62
@@ -657,10 +657,10 @@ static const yytype_int8 yycheck[] =
        3,    23,    24,    25,     3,    29,     5,    30,     7,    28,
       30,     3,     6,     5,    13,     7,    15,    16,    17,     3,
        3,     5,     5,     7,     7,    24,     5,    26,    27,    13,
-       3,    15,    16,    17,    10,    11,    29,     6,    29,     6,
-      24,    25,    26,    29,    66,     3,    14,    69,    67,    68,
-      24,    29,     6,    80,    25,    -1,    -1,    79,     3,    78,
-       5,    -1,     7,    29,    86,    84,    85,    -1,    13,    -1,
+      30,    15,    16,    17,    10,    11,    29,     6,    29,     6,
+      24,    25,    26,     3,    66,    30,    14,    69,    67,    68,
+      24,     3,     6,    80,    25,    -1,    29,    79,     3,    78,
+       5,    -1,     7,    -1,    86,    84,    85,    -1,    13,    -1,
       15,    16,    17,     8,     9,    -1,    -1,    -1,    -1,    24,
       -1,    26,    -1,    18,    19,    20,    21,    22,    23,    33,
       34,    35,    36,    37,    38,    39,    40
@@ -676,8 +676,8 @@ static const yytype_int8 yystos[] =
        0,    34,    29,     8,     9,    18,    19,    20,    21,    22,
       23,    10,    11,    39,    40,    40,     6,    40,    40,    40,
       29,    29,    25,     5,     3,    43,    43,    43,    43,    43,
-      43,    43,    43,    44,    44,     6,    30,     6,     6,    29,
-       3,    37,    40,    34,    34,    40,     6,    30,    14,    29,
+      43,    43,    43,    44,    44,     6,    30,     6,     6,    30,
+       3,    37,    40,    34,    34,    40,     6,    30,    14,    30,
       24,     3,    34,    40,    33,     6,    27,    36,    34,    40,
       25,    29
 };
@@ -1465,252 +1465,251 @@ yyreduce:
   case 11:
 #line 67 "translator.y"
     {
-        char *temp1 = concat(concat(concat(concat("for (", (yyvsp[-6].str)), "; "), (yyvsp[-4].str)), "; ");
+        char *temp1 = concat(concat(concat(concat("for ", (yyvsp[-6].str)), " in "), (yyvsp[-4].str)), "..");
         char *temp2 = concat(temp1, (yyvsp[-2].str));
-        (yyval.str) = concat(temp2, ")\n");
-        (yyval.str) = concat((yyval.str), (yyvsp[0].str));
+        (yyval.str) = concat(concat(concat(temp2, " do"), (yyvsp[0].str)), "end\n");
         free(temp1);
         free(temp2);
     }
-#line 1476 "translator.tab.c"
+#line 1475 "translator.tab.c"
     break;
 
   case 12:
-#line 76 "translator.y"
+#line 75 "translator.y"
     {
         (yyval.str) = concat("\n", (yyvsp[-1].str));
     }
-#line 1484 "translator.tab.c"
+#line 1483 "translator.tab.c"
     break;
 
   case 13:
-#line 80 "translator.y"
+#line 79 "translator.y"
     {
         (yyval.str) = (yyvsp[0].str);
     }
-#line 1492 "translator.tab.c"
+#line 1491 "translator.tab.c"
     break;
 
   case 14:
-#line 87 "translator.y"
+#line 86 "translator.y"
     {
         (yyval.str) = concat(concat(concat(concat(concat(concat("def ", (yyvsp[-7].str)), " "), (yyvsp[-5].str)), "\n"), concat((yyvsp[-2].str), (yyvsp[-1].str))), "end\n");
     }
-#line 1500 "translator.tab.c"
+#line 1499 "translator.tab.c"
     break;
 
   case 15:
-#line 94 "translator.y"
+#line 93 "translator.y"
     {
         (yyval.str) = concat(concat("return ", (yyvsp[-1].str)), "\n");
     }
-#line 1508 "translator.tab.c"
+#line 1507 "translator.tab.c"
     break;
 
   case 16:
-#line 98 "translator.y"
+#line 97 "translator.y"
     {
         (yyval.str) = "";
     }
-#line 1516 "translator.tab.c"
+#line 1515 "translator.tab.c"
     break;
 
   case 17:
-#line 105 "translator.y"
+#line 104 "translator.y"
     {
         (yyval.str) = (yyvsp[0].str);
     }
-#line 1524 "translator.tab.c"
+#line 1523 "translator.tab.c"
     break;
 
   case 18:
-#line 109 "translator.y"
+#line 108 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), ", "), (yyvsp[0].str));
     }
-#line 1532 "translator.tab.c"
+#line 1531 "translator.tab.c"
     break;
 
   case 19:
-#line 113 "translator.y"
+#line 112 "translator.y"
     {
         (yyval.str) = "";
     }
-#line 1540 "translator.tab.c"
+#line 1539 "translator.tab.c"
     break;
 
   case 20:
-#line 120 "translator.y"
+#line 119 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-3].str), " "), (yyvsp[-1].str));
     }
-#line 1548 "translator.tab.c"
+#line 1547 "translator.tab.c"
     break;
 
   case 21:
-#line 127 "translator.y"
+#line 126 "translator.y"
     {
         (yyval.str) = (yyvsp[0].str);
     }
-#line 1556 "translator.tab.c"
+#line 1555 "translator.tab.c"
     break;
 
   case 22:
-#line 131 "translator.y"
+#line 130 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), ", "), (yyvsp[0].str));
     }
-#line 1564 "translator.tab.c"
+#line 1563 "translator.tab.c"
     break;
 
   case 23:
-#line 135 "translator.y"
+#line 134 "translator.y"
     {
         (yyval.str) = "";
     }
-#line 1572 "translator.tab.c"
+#line 1571 "translator.tab.c"
     break;
 
   case 24:
-#line 141 "translator.y"
+#line 140 "translator.y"
                { (yyval.str) = (yyvsp[0].str); }
-#line 1578 "translator.tab.c"
+#line 1577 "translator.tab.c"
     break;
 
   case 25:
-#line 142 "translator.y"
+#line 141 "translator.y"
                     { (yyval.str) = (yyvsp[0].str); }
-#line 1584 "translator.tab.c"
+#line 1583 "translator.tab.c"
     break;
 
   case 26:
-#line 147 "translator.y"
+#line 146 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " = "), (yyvsp[0].str));
     }
-#line 1592 "translator.tab.c"
+#line 1591 "translator.tab.c"
     break;
 
   case 27:
-#line 150 "translator.y"
+#line 149 "translator.y"
                         { (yyval.str) = (yyvsp[0].str); }
-#line 1598 "translator.tab.c"
+#line 1597 "translator.tab.c"
     break;
 
   case 28:
-#line 154 "translator.y"
+#line 153 "translator.y"
          { (yyval.str) = (yyvsp[0].str); }
-#line 1604 "translator.tab.c"
+#line 1603 "translator.tab.c"
     break;
 
   case 29:
-#line 156 "translator.y"
+#line 155 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " + "), (yyvsp[0].str));
     }
-#line 1612 "translator.tab.c"
+#line 1611 "translator.tab.c"
     break;
 
   case 30:
-#line 160 "translator.y"
+#line 159 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " - "), (yyvsp[0].str));
     }
-#line 1620 "translator.tab.c"
+#line 1619 "translator.tab.c"
     break;
 
   case 31:
-#line 164 "translator.y"
+#line 163 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " > "), (yyvsp[0].str));
     }
-#line 1628 "translator.tab.c"
+#line 1627 "translator.tab.c"
     break;
 
   case 32:
-#line 168 "translator.y"
+#line 167 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " < "), (yyvsp[0].str));
     }
-#line 1636 "translator.tab.c"
+#line 1635 "translator.tab.c"
     break;
 
   case 33:
-#line 172 "translator.y"
+#line 171 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " >= "), (yyvsp[0].str));
     }
-#line 1644 "translator.tab.c"
+#line 1643 "translator.tab.c"
     break;
 
   case 34:
-#line 176 "translator.y"
+#line 175 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " <= "), (yyvsp[0].str));
     }
-#line 1652 "translator.tab.c"
+#line 1651 "translator.tab.c"
     break;
 
   case 35:
-#line 180 "translator.y"
+#line 179 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " == "), (yyvsp[0].str));
     }
-#line 1660 "translator.tab.c"
+#line 1659 "translator.tab.c"
     break;
 
   case 36:
-#line 184 "translator.y"
+#line 183 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " != "), (yyvsp[0].str));
     }
-#line 1668 "translator.tab.c"
+#line 1667 "translator.tab.c"
     break;
 
   case 37:
-#line 190 "translator.y"
+#line 189 "translator.y"
            { (yyval.str) = (yyvsp[0].str); }
-#line 1674 "translator.tab.c"
+#line 1673 "translator.tab.c"
     break;
 
   case 38:
-#line 192 "translator.y"
+#line 191 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " * "), (yyvsp[0].str));
     }
-#line 1682 "translator.tab.c"
+#line 1681 "translator.tab.c"
     break;
 
   case 39:
-#line 196 "translator.y"
+#line 195 "translator.y"
     {
         (yyval.str) = concat(concat((yyvsp[-2].str), " / "), (yyvsp[0].str));
     }
-#line 1690 "translator.tab.c"
+#line 1689 "translator.tab.c"
     break;
 
   case 40:
-#line 202 "translator.y"
+#line 201 "translator.y"
            { (yyval.str) = (yyvsp[0].str); }
-#line 1696 "translator.tab.c"
+#line 1695 "translator.tab.c"
     break;
 
   case 41:
-#line 203 "translator.y"
+#line 202 "translator.y"
          { (yyval.str) = (yyvsp[0].str); }
-#line 1702 "translator.tab.c"
+#line 1701 "translator.tab.c"
     break;
 
   case 42:
-#line 205 "translator.y"
+#line 204 "translator.y"
     {
         (yyval.str) = concat(concat("(", (yyvsp[-1].str)), ")");
     }
-#line 1710 "translator.tab.c"
+#line 1709 "translator.tab.c"
     break;
 
 
-#line 1714 "translator.tab.c"
+#line 1713 "translator.tab.c"
 
       default: break;
     }
@@ -1942,7 +1941,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 210 "translator.y"
+#line 209 "translator.y"
 
 
 char *concat(const char *s1, const char *s2) {

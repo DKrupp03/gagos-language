@@ -5,12 +5,8 @@ ok - Estruturas de controle de repetição
 ok - Operações matemáticas
 ok - Escrita de resultados (i.e. print e echo)
 
---> Ajustar ou remover o for
 --> Floats?
 --> Readme
-
-ADICIONAR
-- Expressões aritméticas
 
 POR FAZER
 - Gerador de código (rodar o código em ruby)

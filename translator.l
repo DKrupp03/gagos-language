@@ -12,13 +12,13 @@ extern YYSTYPE yylval;
 %%
 
 [0-9]+              { yylval.str = strdup(yytext); return NUMBER; }
-"if"                { return IF; }
-"else"              { return ELSE; }
-"while"             { return WHILE; }
-"for"               { return FOR; }
-"print"             { return PRINT; }
-"function"          { return FUNCTION; }
-"return"            { return RETURN; }
+"IFIF"              { return IF; }
+"ELSESE"            { return ELSE; }
+"WHIWHILE"          { return WHILE; }
+"FOFOR"             { return FOR; }
+"PRIPRINT"          { return PRINT; }
+"FUFUNCTION"        { return FUNCTION; }
+"RETUTURN"          { return RETURN; }
 "--".*              { /* Ignorar comentários */ }
 "+"                 { return PLUS; }
 "-"                 { return MINUS; }
