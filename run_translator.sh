@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Limpar arquivos antigos
-rm -f lex.yy.c translator.tab.c translator.tab.h translator
+rm -f lex.yy.c translator.tab.c translator.tab.h translator translated_code.rb
 
 # Compilar o lexer e o parser
 flex -o lex.yy.c translator.l
@@ -15,6 +15,9 @@ if [ ! -f translator ]; then
   echo "Erro na compilação do tradutor."
   exit 1
 fi
+
+# Remover o arquivo temporário anterior
+rm -f translated_code.rb
 
 # Executar o tradutor no código de entrada e salvar a saída em um arquivo temporário
 ./translator "$1" > translated_code.rb

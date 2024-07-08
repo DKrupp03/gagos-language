@@ -16,9 +16,12 @@ char *concat(const char *s1, const char *s2);
 
 /* Declaração de tokens */
 %token <str> ID STRING LPAREN RPAREN NUMBER PLUS MINUS TIMES DIVIDE ASSIGN IF ELSE WHILE FOR PRINT '>' '<' GE LE EQ NE LBRACE RBRACE FUNCTION RETURN FLOAT
+
+/* Precedências e associatividades */
 %left PLUS MINUS
 %left TIMES DIVIDE
 %right ASSIGN
+%right NOT
 %nonassoc IFX
 %nonassoc ELSE
 
@@ -187,6 +190,10 @@ simple_expression:
 
 term:
     factor { $$ = $1; }
+    | NOT factor
+    {
+        $$ = concat("!", $2);
+    }
     | term TIMES factor
     {
         $$ = concat(concat($1, " * "), $3);

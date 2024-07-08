@@ -3,10 +3,10 @@
 x = (2 + 2) * 3;
 y = 20;
 
-IFIF (x < y) {
-    PRIPRINT "#{x} é menor que #{y}";
-} ELSESE {
+IFIF (NONOT(x < y)) {
     PRIPRINT "#{x} é maior que #{y}";
+} ELSESE {
+    PRIPRINT "#{x} é menor que #{y}";
 }
 
 WHIWHILE (x < 15) {

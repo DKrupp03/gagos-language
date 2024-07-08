@@ -20,6 +20,7 @@ extern YYSTYPE yylval;
 "PRIPRINT"          { return PRINT; }
 "FUFUNCTION"        { return FUNCTION; }
 "RETUTURN"          { return RETURN; }
+"NONOT"             { return NOT; }
 "--".*              { /* Ignorar comentários */ }
 "+"                 { return PLUS; }
 "-"                 { return MINUS; }

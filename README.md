@@ -7,7 +7,8 @@ REQUISITOS:
 
 RODAR SCRIPT:
 ```console
-$ ./run_translator.sh input.gago
+$ chmod +x run_translator.sh
+$ ./run_translator.sh example.gago
 ```
 
 OU RODAR CADA ETAPA:
@@ -15,5 +16,7 @@ OU RODAR CADA ETAPA:
 $ flex translator.l
 $ bison -d translator.y
 $ gcc lex.yy.c translator.tab.c -o translator -lfl
-$ ./translator < input.gago
+$ ./translator < example.gago
+$ ./translator example.gago > translated_code.rb
+$ ruby translated_code.rb
 ```
