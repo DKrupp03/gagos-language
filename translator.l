@@ -26,6 +26,8 @@ extern YYSTYPE yylval;
 "-"                 { return MINUS; }
 "*"                 { return TIMES; }
 "/"                 { return DIVIDE; }
+"["                 { return '['; }
+"]"                 { return ']'; }
 "("                 { return LPAREN; }
 ")"                 { return RPAREN; }
 "{"                 { return LBRACE; }

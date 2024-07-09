@@ -14,8 +14,10 @@ WHIWHILE (x < 15) {
     PRIPRINT "x = #{x}";
 }
 
-FOFOR (i, 0, 5) {
-    PRIPRINT "i = #{i}";
+meu_array = ["A", "B", "C", "D", "E"];
+
+FOFOR (i, 0, 4) {
+    PRIPRINT "letra = #{meu_array[i]}";
 }
 
 FUFUNCTION media(a, b) {

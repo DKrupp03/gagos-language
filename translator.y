@@ -15,7 +15,7 @@ char *concat(const char *s1, const char *s2);
 }
 
 /* Declaração de tokens */
-%token <str> ID STRING LPAREN RPAREN NUMBER PLUS MINUS TIMES DIVIDE ASSIGN IF ELSE WHILE FOR PRINT '>' '<' GE LE EQ NE LBRACE RBRACE FUNCTION RETURN FLOAT
+%token <str> ID STRING LPAREN RPAREN NUMBER PLUS MINUS TIMES DIVIDE ASSIGN IF ELSE WHILE FOR PRINT '>' '<' GE LE EQ NE LBRACE RBRACE FUNCTION RETURN FLOAT '[' ']'
 
 /* Precedências e associatividades */
 %left PLUS MINUS
@@ -44,23 +44,23 @@ statements:
 statement:
     expression ';'
     {
-        $$ = concat($1, "\n");
+        $$ = concat($1, ";\n");
     }
     | PRINT expression ';'
     {
-        $$ = concat(concat("puts ", $2), "\n");
+        $$ = concat(concat("puts ", $2), ";\n");
     }
     | PRINT STRING ';'
     {
-        $$ = concat(concat("puts \"", concat($2, "\"")), "\n");
+        $$ = concat(concat("puts \"", concat($2, "\"")), ";\n");
     }
     | IF LPAREN expression RPAREN statement %prec IFX
     {
-        $$ = concat(concat("if ", $3), concat($5, "end"));
+        $$ = concat(concat("if ", $3), concat($5, "end\n"));
     }
     | IF LPAREN expression RPAREN statement ELSE statement
     {
-        $$ = concat(concat(concat(concat("if ", $3), $5), "else"), concat($7, "end\n"));
+        $$ = concat(concat(concat(concat("if ", $3), $5), "else\n"), concat($7, "end\n"));
     }
     | WHILE LPAREN expression RPAREN statement
     {
@@ -94,7 +94,7 @@ function_declaration:
 return_statement:
     RETURN expression ';'
     {
-        $$ = concat(concat("return ", $2), "\n");
+        $$ = concat(concat("return ", $2), ";\n");
     }
     | /* vazio */
     {
@@ -129,9 +129,18 @@ argument_list:
     {
         $$ = $1;
     }
+    |
+    STRING
+    {
+        $$ = concat(concat("\"", $1), "\"");
+    }
     | argument_list ',' expression
     {
         $$ = concat(concat($1, ", "), $3);
+    }
+    | argument_list ',' STRING
+    {
+        $$ = concat(concat($1, ", "), concat("\"", concat($3, "\"")));
     }
     | /* vazio */
     {
@@ -142,6 +151,10 @@ argument_list:
 expression:
     assignment { $$ = $1; }
     | function_call { $$ = $1; }
+    | ID '[' expression ']'
+    {
+        $$ = concat(concat($1, "["), concat($3, "]"));
+    }
     ;
 
 assignment:
@@ -185,6 +198,10 @@ simple_expression:
     | simple_expression NE term
     {
         $$ = concat(concat($1, " != "), $3);
+    }
+    | '[' argument_list ']'
+    {
+        $$ = concat(concat("[", $2), "]");
     }
     ;
 
